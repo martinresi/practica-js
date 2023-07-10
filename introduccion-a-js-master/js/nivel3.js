@@ -125,7 +125,7 @@ const nuestroTwitter = document.querySelector('.twitter'); // atricuto a la etiq
 //       Utilizá console.log para ver lo que obtuviste!
 
 const etiqueta = document.querySelector('h1');
-
+console.log(etiqueta);
 
 
 
