@@ -119,12 +119,12 @@
     // Eso quiere decir que se pueden cambiar los atributos y propiedades del elemento,
     // pero no la variable en sí misma. Vas a ver esto en acción ahora mismo.
 */
-
+const nuestroTwitter = document.querySelector('.twitter'); // atricuto a la etiqueta del HTML .twitter
 // TAREA: Ahora te toca a vos! — Obtené la etiqueta h1 de la página y guardala en una variable
 //       variable llamada nuestroTitulo.
 //       Utilizá console.log para ver lo que obtuviste!
 
-
+const etiqueta = document.querySelector('h1');
 
 
 
