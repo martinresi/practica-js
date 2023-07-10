@@ -126,11 +126,29 @@ const nuestroTwitter = document.querySelector('.twitter'); // atricuto a la etiq
 
 const etiqueta = document.querySelector('h1');
 console.log(etiqueta);
+console.log(etiqueta.innerText);
+etiqueta.innerText = 'r argentina progrma';
+
+const mediLink = document.querySelectorAll('li');
+console.log(mediLink);
+for (let i = 0; i < mediLink.length; i++) {
+     console.log(mediLink[i].innerText);
+    
+}
+//practica  
+const $botonIngreso =document.querySelector('#ingresar');
 
 
+$botonIngreso.onclick = function(){
+    const registro = Number(document.querySelector('#input-usuario').value);
+    alert(registro);
+}
+/*$botonIngreso.onclick= function(){
+    alert('diste click')
+}*/
 
-/*
-    Obteniendo elementos similares.
+
+/*mediLink  Obteniendo elementos similares.
     ========================
 
     También podemos obtener todos los elementos con la misma etiqueta. En nuestro
