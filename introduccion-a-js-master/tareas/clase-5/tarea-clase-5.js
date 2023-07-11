@@ -41,6 +41,28 @@ Ejemplo form:
 *
 * */
 
+function calcularSalarioMensual(salarioAnual){
+
+  return salarioAnual / 12;
+}
+
+const $buttonCalcularSalario = document.querySelector('#calcularSalario');
+
+$buttonCalcularSalario.onclick = function(){
+
+  const salarioAnual= Number(document.querySelector('#salarioAnual').value);
+
+  const salarioMensual = calcularSalarioMensual(salarioAnual);
+
+  document.querySelector('#salarioMensual').value = salarioMensual; // con esto lo colocamos dentro del la etiqueta
+
+  console.log(salarioMensual);
+
+  return false;
+
+}
+
+
 //TAREA: En otro archivo distinto,
 // Por cada clase de r/argentina programa existente, vamos a pedir:
 // horas, minutos y segundos de cada video. Ej. Si un video dura
@@ -48,6 +70,8 @@ Ejemplo form:
 // cada dato.
 // al apretar el botón "Calcular tiempo total", debe mostrar en un
 // <strong> pre-creado el tiempo total de los videos.
+
+
 
 //TAREA: En otro archivo distinto,
 // Crear una lista de <ol> y <li> que contengan sólo números.
