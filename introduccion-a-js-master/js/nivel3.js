@@ -126,11 +126,29 @@ const nuestroTwitter = document.querySelector('.twitter'); // atricuto a la etiq
 
 const etiqueta = document.querySelector('h1');
 console.log(etiqueta);
+console.log(etiqueta.innerText);
+etiqueta.innerText = 'r argentina progrma';
+
+const mediLink = document.querySelectorAll('li');
+console.log(mediLink);
+for (let i = 0; i < mediLink.length; i++) {
+     console.log(mediLink[i].innerText);
+    
+}
+//practica  
+const $botonIngreso =document.querySelector('#ingresar');
 
 
+$botonIngreso.onclick = function(){
+    const registro = Number(document.querySelector('#input-usuario').value);
+    alert(registro);
+}
+/*$botonIngreso.onclick= function(){
+    alert('diste click')
+}*/
 
-/*
-    Obteniendo elementos similares.
+
+/*mediLink  Obteniendo elementos similares.
     ========================
 
     También podemos obtener todos los elementos con la misma etiqueta. En nuestro
@@ -146,8 +164,9 @@ console.log(etiqueta);
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
-
-
+const h3 = document.querySelector('.primerh3');
+h3.textContent = 'nuevo';
+console.log(h3.innerText);
 
 
 
@@ -206,7 +225,8 @@ console.log(etiqueta);
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
 
-
+nuestroTwitter.textContent = '@ButenkoMe';
+console.log(nuestroTwitter.textContent);
 
 
 /*
@@ -223,10 +243,7 @@ console.log(etiqueta);
 
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
-
-
-
-
+document.querySelector('img').src = 'img/kittens.jpeg';// podemos cambiar el valor de la imagen
 
 /*
     Editando estilos
@@ -245,7 +262,8 @@ console.log(etiqueta);
     const nuestroTwitter = document.querySelector('.twitter');
     nuestroTwitter.style.backgroundColor = 'white';
 */
-
+//const nuestroTwitter = document.querySelector('.twitter');  // nuestrotwitter ya esta edclarado
+nuestroTwitter.style.backgroundColor = 'red'; 
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
 
@@ -259,6 +277,7 @@ console.log(etiqueta);
 
     El objeto "document" también nos da maneras de crear nodos desde cero.
 
+    //IMPORTANTE
     document.createElement('div'); // crea un nuevo elemento llamado 'div'.
     document.createTextNode('foobar'); // crea un nuevo texto que contiene 'foobar'
     existingNode.appendChild(newNode); // agrega un newNode al final de existingNode.
@@ -266,10 +285,10 @@ console.log(etiqueta);
     Ejemplo:
 
     const nodoPagina = document.querySelector('body');
-    const nuevoParrafo = document.createElement('p');
-    const textoParrafo = document.createTextNode('Yeeee!');
-    nuevoParrafo.appendChild(textoParrafo);
-    nodoPagina.appendChild(nuevoParrafo);
+    const nuevoParrafo = document.createElement('p');  //cre instancia <p> </p<
+    const textoParrafo = document.createTextNode('Yeeee!');  //crea el texto 'yeeeee!' 
+    nuevoParrafo.appendChild(textoParrafo); //añade a <p> yeeee! </p>
+    nodoPagina.appendChild(nuevoParrafo); // añade al body lo anterior
 */
 
 // Tarea: Todavía seguís teniendo a los gatitos en tu pantalla? A mí me gusta el logo y los gatitos.
@@ -278,7 +297,9 @@ console.log(etiqueta);
 //
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
-
+const nodoImagen = document.createElement('img'); // creamos una instancia de imagen
+nodoImagen.src = 'img/woman_bw.jpg';// asignamos a la variable anterior la imagen
+document.querySelector('header').appendChild(nodoImagen);    // tomamos a header y le añadimos  el nodoImagen
 
 
 
