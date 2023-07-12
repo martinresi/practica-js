@@ -23,7 +23,7 @@ document.querySelector('#calcular').onclick = function(event) {
   mostrarEdad('mayor', obtenerMayorNumero(numeros));
   mostrarEdad('menor', obtenerMenorNumero(numeros));
   mostrarEdad('promedio', obtenerPromedio(numeros));
-  mostrarResultados();
+  //mostrarResultados();
 
   event.preventDefault();
 };

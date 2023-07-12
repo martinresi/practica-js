@@ -17,12 +17,30 @@
         <input type="reset" >
     </form>
     
-   <ol>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-   </ol>
+
+
+    
+        <h1>Calcule el promedio de edad de su familia</h1>
+        <form id="calcular-edades">
+            <label for="cantidad-integrantes">Cantidad de integrantes de la familia</label>
+            <input type="number" id="cantidad-integrantes">
+            <button type="submit" id="boton-siguiente">Siguiente</button>
+    
+            <div id="integrantes-familia">
+    
+            </div>
+    
+            <button type="button" id="calcular" class="oculto">Calcular</button>
+    
+            <div id="resultados-calculo" class="oculto">
+                <p>La mayor edad es: <strong id="edad-mayor"></strong></p>
+                <p>La menor edad es: <strong id="edad-menor"></strong></p>
+                <p>El promedio de edad es: <strong id="edad-promedio"></strong></p>
+            </div>
+    
+            <button type="reset" id="boton-reset">Reiniciar</button>
+    
+        </form>
 
     <script src="tarea-clase-5.js" type="text/JavaScript"></script>
 </body>

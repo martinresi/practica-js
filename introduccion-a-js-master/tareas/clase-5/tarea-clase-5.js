@@ -80,3 +80,139 @@ $buttonCalcularSalario.onclick = function(){
 // 2. obtener el número más pequeño y mostrarlo en un <em> pre-creado con el texto "El número más pequeño es..."
 // 3. obtener el número más grande y mostrarlo en un <em> pre-creado con el texto "El número más grande es..."
 // 4. obtener el número que más se repite y mostrarlo en un <em> pre-creado con el texto "El número más frecuente es..."
+
+
+function obtenerMayor(numeros){
+  let mayorNumero = numeros[0];
+  for (let i=0;i<numeros.length;i++){
+      if (numeros[i]>mayorNumero){
+          mayorNumero=numeros[i];
+      }
+  }
+
+  return mayorNumero;
+}
+
+function obtenerMenor(numeros){
+  let menorNumero = numeros[0];
+  for (let i=0;i<numeros.length;i++){
+      if(numeros[i]<menorNumero){ 
+          menorNumero=numeros[i];
+      }
+  }
+
+  return menorNumero;
+}
+
+function obtenerPromedio(numeros){
+  let acumulador=0;
+  for (let i=0;i<numeros.length;i++){
+      acumulador += numeros[i];
+  }
+  const promedio = acumulador/numeros.length;
+
+  return promedio;
+}
+
+
+
+
+document.querySelector("#boton-siguiente").onclick = function(event){   
+  const $cantidadIntegrantes = document.querySelector("#cantidad-integrantes");
+  const cantidadIntegrantes = Number($cantidadIntegrantes.value);
+
+  quitarIntegrantes();
+  crearIntegrantes(cantidadIntegrantes);
+
+  event.preventDefault();
+}
+
+document.querySelector("#calcular").onclick = function(event){
+  const numeros = obtenerEdades();
+  document.querySelector("#edad-menor").textContent = `La menor edad es ${obtenerMenor(numeros)}`
+  document.querySelector("#edad-mayor").textContent = `La mayor edad es ${obtenerMayor(numeros)}`
+  document.querySelector("#edad-promedio").textContent = `El promedio de edad es ${obtenerPromedio(numeros)}`
+  mostrarCalculos();
+  
+  event.preventDefault();
+}
+
+document.querySelector("#boton-reset").onclick = reset;
+
+
+function quitarIntegrantes(){
+  const $integrantes = document.querySelectorAll(".integrantes");
+  for(let i=0;i<$integrantes.length;i++){
+      $integrantes[i].remove();
+  }
+}
+
+function crearIntegrantes(cantidadIntegrantes){
+  if(cantidadIntegrantes>0){
+      mostrarBotonCalcular();
+  }
+  else{
+      reset();
+  }
+  for(let i=0;i<cantidadIntegrantes;i++){
+      crearIntegrante(i);
+  }
+}
+
+
+
+
+
+
+
+function crearIntegrante(indice){
+  const $div = document.createElement('div');
+  $div.className = "integrantes";
+
+  const $label = document.createElement("label");
+  $label.textContent = `Edad del integrante numero ${indice+1}`;
+  const $input = document.createElement("input");
+  $input.type = "number";
+  $input.min = "0";
+
+  $div.appendChild($label);
+  $div.appendChild($input);
+
+  const $integrantes = document.querySelector("#integrantes-familia");
+  $integrantes.appendChild($div);
+}
+
+
+function obtenerEdades(){
+  const $integrantes = document.querySelectorAll(".integrantes input");
+  const edades = [];
+  for (let i=0;i<$integrantes.length;i++){
+      edades.push(Number($integrantes[i].value));
+  }
+
+  return edades;
+}
+
+function reset(){
+  quitarIntegrantes();
+  ocultarBotonCalcular();
+  ocultarCalculos();
+}
+
+function ocultarBotonCalcular(){
+  document.querySelector("#calcular").className = "oculto";
+}
+
+
+function mostrarBotonCalcular(){
+  document.querySelector("#calcular").className = "";
+}
+
+
+function ocultarCalculos(){
+  document.querySelector("#resultados-calculo").className = "oculto";
+}
+
+function mostrarCalculos(){
+  document.querySelector("#resultados-calculo").className = "";
+}
